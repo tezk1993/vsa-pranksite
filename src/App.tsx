@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="w-full bg-black justify-center">
       <div className="bg-black text-green-500 min-h-screen flex flex-col items-center justify-center font-mono">
-        <h1 className="text-red-600 text-4xl font-bold animate-pulse mb-6">
+        <h1 className="text-red-600 text-xl font-bold animate-pulse mb-6 md:text-4xl">
           ⚠️ SYSTEM BREACH DETECTED ⚠️
         </h1>
         <div className="bg-gray-900 p-6 rounded-lg shadow-lg w-11/12 max-w-2xl">
