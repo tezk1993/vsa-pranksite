@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 import foghorn from "./assets/foghorn.wav";
+import logo from "./assets/Logo.png";
 function App() {
   const [playAudio, setPlayAudio] = useState(false);
 
@@ -42,8 +43,10 @@ function App() {
   ];
 
   return (
-    <div className="w-full bg-black justify-center">
+    <div className="w-full bg-black justify-center flex-col ">
       <div className="bg-black text-green-500 min-h-screen flex flex-col items-center justify-center font-mono">
+        <img src={logo} className="size-32 m-8" />
+
         <h1 className="text-red-600 text-xl font-bold animate-pulse mb-6 md:text-4xl">
           ⚠️ SYSTEM BREACH DETECTED ⚠️
         </h1>
@@ -54,7 +57,7 @@ function App() {
             </p>
           ))}
           {index >= messages.length && (
-            <p className="text-red-500 mt-4 animate-pulse">
+            <p className="text-red-500 mt-4 animate-pulse text-center">
               💀 All data has been stolen 💀
             </p>
           )}
