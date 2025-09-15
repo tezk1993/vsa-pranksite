@@ -30,16 +30,30 @@ function App() {
         setLog((prev) => [...prev, messages[index]]);
         setIndex((prev) => prev + 1);
       }
-    }, 1000);
+    }, 500);
     return () => clearInterval(interval);
   }, [index]);
 
   const messages = [
-    "Accessing system files...",
-    "Injecting payload...",
-    "Disabling firewall...",
-    "Uploading data to remote server...",
-    "System compromised!",
+    "Connecting to remote host...",
+    "Authenticating user credentials...",
+    "Access granted via SSH key...",
+    "Enumerating system directories...",
+    "Reading configuration files...",
+    "Checking firewall status...",
+    "Firewall rules retrieved...",
+    "Scanning for open ports...",
+    "Port 22 (SSH) open – initiating session...",
+    "Downloading system logs...",
+    "Uploading diagnostic report...",
+    "Running vulnerability scan...",
+    "Detected outdated software packages...",
+    "Attempting privilege escalation...",
+    "User added to sudoers group...",
+    "Modifying crontab for scheduled task...",
+    "Backing up configuration files...",
+    "Restarting network service...",
+    "Session terminated successfully.",
   ];
 
   return (
@@ -51,24 +65,27 @@ function App() {
           ⚠️ SYSTEM BREACH DETECTED ⚠️
         </h1>
         <div className="bg-gray-900 p-6 rounded-lg shadow-lg w-11/12 max-w-2xl">
-          {log.map((line, i) => (
-            <p key={i} className="mb-1">
-              {line}
-            </p>
-          ))}
-          {index >= messages.length && (
-            <p className="text-red-500 mt-4 animate-pulse text-center">
+          {index >= messages.length ? (
+            <p className="text-red-500 mt-4 animate-pulse text-center text-4xl">
               💀 All data has been stolen 💀
             </p>
+          ) : (
+            <>
+              {log.map((line, i) => (
+                <p key={i} className="mb-1">
+                  {line}
+                </p>
+              ))}
+            </>
           )}
         </div>
 
         {index >= messages.length && (
           <button
             onClick={() => setPlayAudio(true)}
-            className="mt-6 bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-2 px-4 rounded animate-pulse"
+            className="mt-6 bg-gradient-to-r from-red-600 via-yellow-500 to-red-600 text-white font-extrabold py-3 px-6 rounded-lg shadow-2xl animate-pulse ring-4 ring-red-500 ring-offset-2 ring-offset-black transition duration-300 ease-in-out hover:scale-105 hover:brightness-125 hover:animate-none"
           >
-            Dekrypter data
+            ⚠️ Stop angrebet nu!
           </button>
         )}
       </div>
